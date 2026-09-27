@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1:3306
--- Létrehozás ideje: 2026. Sze 27. 04:17
+-- Létrehozás ideje: 2026. Sze 27. 17:07
 -- Kiszolgáló verziója: 8.4.7
 -- PHP verzió: 8.3.28
 
@@ -77,7 +77,14 @@ CREATE TABLE IF NOT EXISTS `products` (
   `image` varchar(255) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
   `category` varchar(100) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `products`
+--
+
+INSERT INTO `products` (`id`, `name`, `description`, `price`, `size`, `stock`, `image`, `category`) VALUES
+(1, 'test', 'test', 34.00, 'L', 3, 'dd', 'test');
 
 -- --------------------------------------------------------
 
@@ -93,9 +100,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) COLLATE utf8mb4_hungarian_ci NOT NULL,
   `phone` varchar(30) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
   `address` varchar(255) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
+  `Role` enum('Customer','Admin','Developer') COLLATE utf8mb4_hungarian_ci NOT NULL DEFAULT 'Customer',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `Role`) VALUES
+(1, 'DEV', 'dev@sameenergy.com', 'alma1234', NULL, NULL, 'Developer'),
+(2, 'admin', 'admin@sameenergy.com', 'alma123', NULL, NULL, 'Admin'),
+(3, 'pista', 'pistvok@gmail.com', 'asdasd', NULL, NULL, 'Customer');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
