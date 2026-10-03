@@ -38,6 +38,13 @@ CREATE TABLE `orders` (
   `order_date` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
+
+INSERT INTO `orders`
+(`id`,`user_id`, `status`, `total_price`, `order_date`)
+VALUES
+(1,3, 'paid', 104970.00, '2026-09-30 14:25:00'),
+(2,3, 'shipped', 209980.00, '2026-10-01 10:15:00'),
+(3,2, 'delivered', 339960.00, '2026-10-02 16:40:00');
 -- --------------------------------------------------------
 
 --
@@ -54,6 +61,21 @@ CREATE TABLE `order_items` (
   `quantity` int(11) NOT NULL,
   `unit_price` decimal(10,2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
+
+
+INSERT INTO `order_items`
+(`id`,`order_id`, `product_id`, `product_name`, `size`, `quantity`, `unit_price`)
+VALUES
+(1,1, 1, 'Jordan 1 High OG Chicago', '42', 1, 54990.00),
+(2,1, 6, 'AF1 Black/White', '42', 1, 44990.00),
+(3,1, 9, 'Nike zoknik', '42-46', 1, 4990.00),
+(4,2, 4, 'Jordan 4 Bred', '42', 1, 74990.00),
+(5,2, 5, 'Jordan 4 White Cement', '43', 1, 79990.00),
+(6,2, 10, 'Amiri MA-1', '42', 1, 159990.00),
+(7,3, 2, 'Jordan 1 High OG Bred', '42', 1, 54990.00),
+(8,3, 3, 'Jordan 1 High OG Royal Blue', '43', 1, 59990.00),
+(9,3, 7, 'Nike Air Max 1', '42', 1, 49990.00),
+(10,3, 10, 'Amiri MA-1', '42', 1, 159990.00);
 
 -- --------------------------------------------------------
 
@@ -76,10 +98,6 @@ CREATE TABLE `products` (
 --
 -- A tábla adatainak kiíratása `products`
 --
-
-INSERT INTO `products` (`id`, `name`, `description`, `price`, `size`, `stock`, `image`, `category`) VALUES
-(1, 'test', 'test', 34.00, 'L', 3, 'dd', 'test');
-
 -- --------------------------------------------------------
 
 --
