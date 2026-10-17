@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMEENERGY</title>
+    <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">SAMEENERGY</div>
+        <nav>
+            <a href="../index.html">HOME</a>
+            <a href="../Shop/index.html">SHOP</a>
+            <a href="../Brands/index.html">BRANDS</a>
+            <a href="../About/index.html">ABOUT</a>
+            <a href="index.html" class="active">CONTACT</a>
+        </nav>
+        <div class="cart">CART (0)</div>
+    </header>
+
+    <section class="contact-section">
+        <div class="contact-header">
+            <span class="contact-tag">CONTACT</span>
+
+            <h2>GET IN TOUCH</h2>
+            <p>Have a question? Contact the SameEnergy team.</p>
+        </div>
+
+        <form class="contact-form" onsubmit="handleContact(event)">
+            <input type="text" placeholder="NAME" required>
+            <input type="email" placeholder="EMAIL" required>
+            <textarea placeholder="MESSAGE" rows="5" required></textarea>
+            <button type="submit" class="submit-btn">SEND MESSAGE</button>
+        </form>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0b0b0b;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    padding-top: 90px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #0b0b0b;
+    border-bottom: 1px solid #1f1f1f;
+    z-index: 1000;
+}
+
+.logo {
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #777777;
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+nav a:hover, nav a.active {
+    color: #d4af37;
+}
+
+.cart {
+    background: #d4af37;
+    color: #0b0b0b;
+    padding: 6px 14px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.contact-section {
+    padding: 70px 20px;
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.contact-tag {
+    font-size: 9px;
+    letter-spacing: 3px;
+    color: #d4af37;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.contact-header h2 {
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+
+.contact-header p {
+    font-size: 0.7rem;
+    color: #666666;
+    letter-spacing: 1px;
+    margin-bottom: 35px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    background-color: #121212;
+    border: 1px solid #1f1f1f;
+    padding: 14px;
+    color: #ffffff;
+    font-size: 11px;
+    letter-spacing: 1px;
+    outline: none;
+    font-family: Arial, sans-serif;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #d4af37;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #444444;
+}
+
+.submit-btn {
+    background-color: #d4af37;
+    color: #0b0b0b;
+    border: none;
+    padding: 14px;
+    font-weight: bold;
+    font-size: 11px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.submit-btn:hover {
+    opacity: 0.85;
+}
