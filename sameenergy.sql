@@ -113,16 +113,17 @@ CREATE TABLE `users` (
   `phone` varchar(30) DEFAULT NULL,
   `address` varchar(255) DEFAULT NULL,
   `Role` enum('Customer','Admin','Developer') NOT NULL DEFAULT 'Customer'
+  `profile_img` varchar(255) COLLATE utf8mb4_hungarian_ci DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
 --
 -- A tábla adatainak kiíratása `users`
 --
 
-INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `Role`) VALUES
-(1, 'DEV', 'dev@sameenergy.com', 'alma1234', NULL, NULL, 'Developer'),
-(2, 'admin', 'admin@sameenergy.com', 'alma123', NULL, NULL, 'Admin'),
-(3, 'pista', 'pistvok@gmail.com', 'asdasd', NULL, NULL, 'Customer');
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `phone`, `address`, `Role`, `profile_img`) VALUES
+(1, 'DEV', 'dev@sameenergy.com', 'alma1234', NULL, NULL, 'Developer',NULL),
+(2, 'admin', 'admin@sameenergy.com', 'alma123', NULL, NULL, 'Admin',NULL),
+(3, 'pista', 'pistvok@gmail.com', 'asdasd', NULL, NULL, 'Customer',NULL);
 
 --
 -- Indexek a kiírt táblákhoz
